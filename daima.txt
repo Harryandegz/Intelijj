@@ -1,0 +1,35 @@
+/*
+lambdaÍÆµ¼
+ */
+
+
+public class LambdaTest01 {
+   static class Like2 implements ILike{
+        public void lambda(){
+            System.out.println("i like lambda2");
+        }
+
+    }
+
+    public static void main(String[] args) {
+        ILike like=new Like();
+
+        like=new Like2();
+        like.lambda();
+        like=new ILike() {
+            @Override
+            public void lambda() {
+                System.out.println("i like lambda3");
+            }
+        };
+    }
+}
+interface ILike{
+    void lambda();
+}
+class Like implements ILike{
+    public void lambda(){
+        System.out.println("i like lambda");
+    }
+
+}
